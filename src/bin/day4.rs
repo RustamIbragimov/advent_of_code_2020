@@ -12,7 +12,7 @@ impl<'a> Passport<'a> {
             .into_iter()
             .collect();
         let keys: HashSet<_> = self.fields.keys().cloned().collect();
-        let found_fields: Vec<_> = keys.intersection(&required_fields).collect();
+        let found_fields: Vec<_> = keys.intersection(&required_fields).copied().collect();
         if found_fields.len() == 8 {
             true
         } else if found_fields.len() == 7 && !keys.contains(&"cid") {
