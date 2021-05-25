@@ -1,6 +1,4 @@
 use std::fs;
-use std::cmp::max;
-
 
 fn get_seat_ids(lines: &Vec<&str>) -> Vec<i32> {
     let mut seat_ids: Vec<i32> = Vec::new();
@@ -33,7 +31,6 @@ fn get_seat_ids(lines: &Vec<&str>) -> Vec<i32> {
 
 fn find_missing_seat_id(seat_ids: &mut Vec<i32>) -> Option<i32> {
     seat_ids.sort();
-    let mut missing_seat_id: Option<i32> = None;
     for i in 0..seat_ids.len() - 1 {
         if seat_ids[i + 1] - seat_ids[i] > 1 {
             return Some(seat_ids[i] + 1);
