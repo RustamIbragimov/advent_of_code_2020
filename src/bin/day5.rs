@@ -50,6 +50,6 @@ fn main() {
     let missing_seat_id = find_missing_seat_id(&mut seat_ids);
     match missing_seat_id {
         None => println!("Shouldn't happen"),
-        Some(missing_seat_id) => println!("Part 2: {}", missing_seat_id)
+        Some(missing_seat_id) => println!("Part 2: {}", missing_seat_id),
     }
 }

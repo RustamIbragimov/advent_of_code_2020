@@ -5,7 +5,7 @@ struct Policy<'a> {
     first_num: i32,
     second_num: i32,
     letter: char,
-    password: &'a str
+    password: &'a str,
 }
 
 impl<'a> Policy<'a> {
@@ -21,7 +21,7 @@ impl<'a> Policy<'a> {
             first_num,
             second_num,
             letter: letter.chars().next().unwrap(),
-            password
+            password,
         }
     }
 
@@ -50,10 +50,7 @@ impl<'a> Policy<'a> {
 
 fn main() {
     let contents = fs::read_to_string("inputs/day2.txt").expect("Expected a file");
-    let policies: Vec<_> = contents
-        .lines()
-        .map(|s| Policy::parse(s))
-        .collect();
+    let policies: Vec<_> = contents.lines().map(|s| Policy::parse(s)).collect();
 
     let (mut valid_part_1_count, mut valid_part_2_count) = (0, 0);
     for policy in policies {

@@ -1,5 +1,5 @@
-use std::fs;
 use std::collections::HashSet;
+use std::fs;
 
 fn main() {
     let content = fs::read_to_string("inputs/day6.txt").expect("Expected a file");
@@ -39,7 +39,10 @@ fn main() {
             if current_group_answers.is_empty() {
                 current_group_answers.extend(&current_person_answers);
             } else {
-                current_group_answers = current_group_answers.intersection(&current_person_answers).copied().collect();
+                current_group_answers = current_group_answers
+                    .intersection(&current_person_answers)
+                    .copied()
+                    .collect();
                 if current_group_answers.is_empty() {
                     skip_other_people = true;
                 }

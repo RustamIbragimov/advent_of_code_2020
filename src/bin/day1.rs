@@ -13,7 +13,9 @@ fn main() {
             if numbers[i] + numbers[j] == 2020 {
                 println!(
                     "Part 1: {first} + {second} = 2020, and {first} * {second} = {result}",
-                    first = numbers[i], second = numbers[j], result = numbers[i] * numbers[j]
+                    first = numbers[i],
+                    second = numbers[j],
+                    result = numbers[i] * numbers[j]
                 );
                 break 'outer;
             }
