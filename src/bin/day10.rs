@@ -1,6 +1,5 @@
 use std::fs;
 
-
 fn main() {
     let content = fs::read_to_string("inputs/day10.txt").expect("Expected a file");
     let mut jolts: Vec<u32> = content
@@ -35,4 +34,3 @@ fn main() {
 
     println!("Part 2: {}", ways.last().unwrap());
 }
-
